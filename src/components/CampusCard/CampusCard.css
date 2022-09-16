@@ -24,7 +24,7 @@
 .title-card  {
   font-size: 1.1rem;
   font-weight: 400;
-  color: #4040fb;
+  color: #1976d2;
   text-transform: capitalize;
   text-align: center;
   margin-bottom: 1.2rem;
@@ -32,13 +32,13 @@
 .title-card span  {
   text-transform: uppercase;
   font-weight: 600;
-  color: #0404e2;
+  color: #1976d2;
 }
 .direction-campus-card  {
   font-size: 1rem;
   text-align: justify;
 }
-.button-card  {
+/* .button-card  {
   display: block;
   background-color: #0303b5;
   color: #fff;
@@ -48,7 +48,7 @@
   border-radius: 10px;
   text-decoration: none;
   text-align: center;
-}
+} */
 .button-card:hover  {
   background-color: #4040fb;
   transition: ease-in .3s;
