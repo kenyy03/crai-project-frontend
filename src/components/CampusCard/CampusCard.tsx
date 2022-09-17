@@ -12,27 +12,27 @@ const CampusCard = ({ sedes }: CampusProps) => {
   return (
     <>
       <Card className="card">
-        <img
-          src={require(`../../assets/${sedes.nameImg}`)}
-          alt="Campus"
-          className="img-card"
-        />
-        <CardContent>
-          <p className="title-card">
-            <span>{sedes.campusName}</span> {sedes.campusPlace}
-          </p>
-          <p className="direction-campus-card">{sedes.campusDirection}</p>
-        </CardContent>
-        <CardActions>
-          <Button variant="contained">
-            <Link
-              to={'/rooms'}
-              style={{ textDecoration: 'none', color: '#fff' }}
-            >
-              Reservar ahora
-            </Link>
-          </Button>
-        </CardActions>
+          <img
+            src={require(`../../assets/${sedes.nameImg}`)}
+            alt="Campus"
+            className="img-card"
+          />
+          <CardContent className='content-card'>
+            <p className="title-card">
+              <span>{sedes.campusName}</span> {sedes.campusPlace}
+            </p>
+            <p className="direction-campus-card">{sedes.campusDirection}</p>
+          </CardContent>
+          <CardActions className="card-actions">
+            <Button variant="contained" className="button-card">
+              <Link
+                to={'/rooms'}
+                style={{ textDecoration: 'none', color: '#fff' }}
+              >
+                Reservar ahora
+              </Link>
+            </Button>
+          </CardActions>
       </Card>
     </>
   );
