@@ -24,7 +24,7 @@ const MainContent = () => {
       <Header />
       <div className="card-container">
         {
-          campus.map((sede:Campus) => <CampusCard sedes={sede} />)
+          campus.map((sede:Campus, index) => <CampusCard key={index} sedes={sede} />)
         }
         {/* <CampusCard />
         <CampusCard />

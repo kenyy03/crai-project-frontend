@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CampusCard.css';
 import { Link } from 'react-router-dom';
 import { Campus } from '../../interfaces/Campus';
@@ -8,7 +8,8 @@ interface CampusProps {
   sedes: Campus;
 }
 
-const CampusCard = ({ sedes }: CampusProps) => {
+const CampusCard = ({ sedes }: CampusProps, index:number) => {
+  const [sedeSelected, setSedeSelected] = useState<Campus>();
   return (
     <>
       <Card className="card">
@@ -26,8 +27,9 @@ const CampusCard = ({ sedes }: CampusProps) => {
           <CardActions className="card-actions">
             <Button variant="contained" className="button-card">
               <Link
-                to={'/rooms'}
+                to={`/rooms`}
                 style={{ textDecoration: 'none', color: '#fff' }}
+                onClick={() => setSedeSelected(sedes)}
               >
                 Reservar ahora
               </Link>
