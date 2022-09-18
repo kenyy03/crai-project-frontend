@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './CampusCard.css';
 import { Link } from 'react-router-dom';
 import { Campus } from '../../interfaces/Campus';
@@ -8,33 +8,31 @@ interface CampusProps {
   sedes: Campus;
 }
 
-const CampusCard = ({ sedes }: CampusProps, index:number) => {
-  const [sedeSelected, setSedeSelected] = useState<Campus>();
+const CampusCard = ({ sedes }: CampusProps) => {
   return (
     <>
       <Card className="card">
-          <img
-            src={require(`../../assets/${sedes.nameImg}`)}
-            alt="Campus"
-            className="img-card"
-          />
-          <CardContent className='content-card'>
-            <p className="title-card">
-              <span>{sedes.campusName}</span> {sedes.campusPlace}
-            </p>
-            <p className="direction-campus-card">{sedes.campusDirection}</p>
-          </CardContent>
-          <CardActions className="card-actions">
-            <Button variant="contained" className="button-card">
-              <Link
-                to={`/rooms`}
-                style={{ textDecoration: 'none', color: '#fff' }}
-                onClick={() => setSedeSelected(sedes)}
-              >
-                Reservar ahora
-              </Link>
-            </Button>
-          </CardActions>
+        <img
+          src={require(`../../assets/${sedes.nameImg}`)}
+          alt="Campus"
+          className="img-card"
+        />
+        <CardContent className="content-card">
+          <p className="title-card">
+            <span>{sedes.campusName}</span> {sedes.campusPlace}
+          </p>
+          <p className="direction-campus-card">{sedes.campusDirection}</p>
+        </CardContent>
+        <CardActions className="card-actions">
+          <Button variant="contained" className="button-card">
+            <Link
+              to={'/rooms'}
+              style={{ textDecoration: 'none', color: '#fff', width: '100%', height: '100%' }}
+            >
+              Reservar ahora
+            </Link>
+          </Button>
+        </CardActions>
       </Card>
     </>
   );

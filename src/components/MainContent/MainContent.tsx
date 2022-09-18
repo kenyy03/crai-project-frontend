@@ -6,12 +6,12 @@ import './MainContent.css';
 
 const MainContent = () => {
   const campus :Campus[] = [
-    {
-      nameImg: 'crai-unitec-ceutec-fundacion-nasser.jpg',
-      campusName: 'Crai Unitec',
-      campusPlace: 'Tegucigalpa',
-      campusDirection: 'Boulevard Kenedy, V-782, frente a Residencial Honduras',
-    },
+    // {
+    //   nameImg: 'crai-unitec-ceutec-fundacion-nasser.jpg',
+    //   campusName: 'Crai Unitec',
+    //   campusPlace: 'Tegucigalpa',
+    //   campusDirection: 'Boulevard Kenedy, V-782, frente a Residencial Honduras',
+    // },
     {
       nameImg: 'Ceutec-sps-central.jpg',
       campusName: 'Crai Ceutec',

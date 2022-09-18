@@ -126,7 +126,7 @@ const Header = () => {
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 <Link
-                  to={page === 'Home' ? '/' : '/contact'}
+                  to={page === 'Home' ? '/' : '/'}
                   style={{ textDecoration: 'none', color: '#fff' }}
                 >
                   {page}

@@ -1,11 +1,8 @@
 import * as React from 'react';
 import {
   Formik,
-  FormikHelpers,
-  FormikProps,
   Form,
   Field,
-  FieldProps,
 } from 'formik';
 import Header from '../Header/Header';
 import './ReservationForm.css';
@@ -62,7 +59,8 @@ export const ReservationForm: React.FC<{}> = () => {
                 <option value={2}>2 horas</option>
               </Field>
 
-              <Field name="membersTeam" as="textarea" className="textarea-form" />
+              <label htmlFor="membersTeam">Integrantes | No. Cuenta </label>
+              <Field id="membersTeam" name="membersTeam" as="textarea" className="textarea-form" />
               <Button variant="outlined" className="button-form">
                 Enviar
               </Button>
