@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import './Room.css';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import LooksOneIcon from '@mui/icons-material/LooksOne';
 import LooksTwoIcon from '@mui/icons-material/LooksTwo';
 import Looks3Icon from '@mui/icons-material/Looks3';
@@ -9,13 +9,43 @@ import Looks4Icon from '@mui/icons-material/Looks4';
 import Looks5Icon from '@mui/icons-material/Looks5';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { Button, Card } from '@mui/material';
+import { apiConnection } from '../../api/apiConnection';
+import { Campus } from './../../interfaces/Campus';
 
 const Room = () => {
+  const { sedeId } = useParams();
+  const [rooms, setRooms] = useState<Campus>();
+  const university = 'Ceutec';
+
+  useEffect(() => {
+    const getSedeById = async () => {
+      try {
+        if (!sedeId && sedeId === '') return;
+        const response = await apiConnection.get<Campus>(
+          `/campus/get-campus-by-id/${sedeId}`
+        );
+        if (!response.data && response.data === null) return;
+        setRooms(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getSedeById();
+  }, []);
+
+  const getUniversityName = () => {
+    const index = rooms?.campusName.indexOf(university);
+    const size = rooms?.campusName.length;
+    const universityName = rooms?.campusName.slice(index, size);
+    debugger;
+    return universityName ? universityName : '';
+  };
+
   return (
     <>
       <Header />
       <div className="rooms-container">
-        <h1 style={{ marginBottom: '1rem' }}>Ceutec Sede Central</h1>
+        <h1 style={{ marginBottom: '1rem' }}>{getUniversityName()} {rooms?.sedeName}</h1>
         <Card className="room-container">
           <LooksOneIcon className="icon-room" />
           <div style={{ marginRight: '2.5%' }}>
@@ -31,7 +61,7 @@ const Room = () => {
           </Button>
         </Card>
 
-        <Card className='room-container'>
+        <Card className="room-container">
           <LooksTwoIcon className="icon-room" />
           <div style={{ marginRight: '2.5%' }}>
             <h3 style={{ color: '#000', marginBottom: 4 }}>Sala 2</h3>
