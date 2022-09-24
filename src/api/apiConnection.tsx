@@ -1,4 +1,4 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:4000/api';
+const baseURL = 'https://crai-project-api-deploy.herokuapp.com/api';
 export const apiConnection = axios.create({baseURL});
