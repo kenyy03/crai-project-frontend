@@ -21,13 +21,21 @@ const CampusCard = ({ sedes }: CampusProps) => {
           <p className="title-card">
             <span>{sedes.campusName}</span> {sedes.campusPlace}
           </p>
+          <p className="title-card">
+            {sedes.sedeName}
+          </p>
           <p className="direction-campus-card">{sedes.campusDirection}</p>
         </CardContent>
         <CardActions className="card-actions">
           <Button variant="contained" className="button-card">
             <Link
-              to={'/rooms'}
-              style={{ textDecoration: 'none', color: '#fff', width: '100%', height: '100%' }}
+              to={`/rooms/${sedes._id}`}
+              style={{
+                textDecoration: 'none',
+                color: '#fff',
+                width: '100%',
+                height: '100%',
+              }}
             >
               Reservar ahora
             </Link>

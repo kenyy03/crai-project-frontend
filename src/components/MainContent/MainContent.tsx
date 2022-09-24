@@ -13,7 +13,6 @@ const MainContent = () => {
         const response = await apiConnection.get<Campus[]>(
           '/campus/get-all-campus'
         );
-        debugger;
         if (!response.data) {
           return;
         }
