@@ -31,7 +31,7 @@ const Room = () => {
       }
     };
     getSedeById();
-  }, []);
+  }, [sedeId]);
 
   const getUniversityName = () => {
     const index = rooms?.campusName.indexOf(university);
